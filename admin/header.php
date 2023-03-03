@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$user = $_SESSION['username'];
+	$user = $_SESSION['username']; //Fetch value from session
 ?>
 <!DOCTYPE html>
 <html>

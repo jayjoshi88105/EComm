@@ -1,7 +1,9 @@
 <?php
   require('server/db.php');
+
   $stmt = $conn->prepare("SELECT * FROM products");
   $stmt->execute();
+
   $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
   $products = $stmt->fetchAll();
 ?>
@@ -53,7 +55,7 @@
               <h2>Product List</h2>
             </div>
             <div class="col-md-3 offset-6">
-              <a href="AddProduct.php"><input class="btn btn-success" type="button" value="Add Product"/></a>
+              <a href="AddProduct.php"><input class="btn btn-info" type="button" value="Add Product"/></a>
             </div>
           </div>
           
@@ -75,6 +77,7 @@
               <tbody>
                 <?php
                   $cntr = 1;
+
                   foreach ($products as $value) {
                     ?>
                       <tr>
@@ -96,11 +99,13 @@
                           ?>
                         </td>
                         <td><a href="server/deleteproduct.php?id=<?php echo $value['id'] ?>"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
+
                         <td><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></td>
+                        
                         <td><button type="button" class="btn btn-outline-dark btn-sm">Disable</button></td>
                       </tr>
                     <?php
-                      $cntr++;
+                      $cntr = $cntr + 1;
                   }
                 ?>
               </tbody>

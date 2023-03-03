@@ -22,12 +22,7 @@
           <option value="">-Select Category-</option>
           <option value="Electronics">Electronics</option>
           <option value="Footware">Footware</option>
-          <option value="Home Appliances">Home Appliances</option>
-        </select>
-      </div>
-
-      <div class="form-label-group">
-        <input type="text" name="price" id="price" class="form-control" placeholder="Price" required>
+        + Add <input type="text" name="price" id="price" class="form-control" placeholder="Price" required>
         <label for="price">Price</label>
       </div>
 
