@@ -18,7 +18,7 @@
 
       <div class="form-label-group">
         <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
-        <label for="Password">Password</label>
+        <label for="password">Password</label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <?php
