@@ -11,7 +11,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Product Dashboard</title>
+    <title>Product Page</title>
     <?php require('header.php'); ?>
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
