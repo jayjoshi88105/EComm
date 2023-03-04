@@ -11,7 +11,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Product Dashboard</title>
     <?php require('header.php'); ?>
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
