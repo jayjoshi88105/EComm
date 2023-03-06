@@ -6,8 +6,7 @@
 
 	if($username == "admin" && $password == "admin123")
 	{
-		$_SESSION["username"] = $username; //Store value in session
-		$_SESSION["temp"] = "ABC"; //Store value in session
+		$_SESSION["username"] = $username;
 		
 		header('Location: ../ManageProducts.php');
 	}

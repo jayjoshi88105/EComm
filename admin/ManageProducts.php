@@ -77,8 +77,19 @@
               <tbody>
                 <?php
                   $cntr = 1;
-
+                  $status_lable = "";
+                  
                   foreach ($products as $value) {
+                    if($value['status'] == 1)
+                    {
+                      $status = 0;
+                      $status_lable = "Disable";
+                    }
+                    else if($value['status'] == 0)
+                    {
+                      $status = 1;
+                      $status_lable = "Enable";
+                    }
                     ?>
                       <tr>
                         <td><?php echo $cntr; ?></td>
@@ -100,9 +111,9 @@
                         </td>
                         <td><a href="server/deleteproduct.php?id=<?php echo $value['id'] ?>"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
 
-                        <td><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></td>
+                        <td><a href="EditProduct.php?id=<?php echo $value['id'] ?>"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a></td>
                         
-                        <td><button type="button" class="btn btn-outline-dark btn-sm">Disable</button></td>
+                        <td><a href="server/ChangeProductStatus.php?id=<?php echo $value['id'] ?>&status=<?php echo $status;  ?>"><button type="button" class="btn btn-outline-dark btn-sm"><?php echo $status_lable; ?></button></a></td>
                       </tr>
                     <?php
                       $cntr = $cntr + 1;
