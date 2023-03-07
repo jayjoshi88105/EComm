@@ -1,4 +1,5 @@
 <?php
+  //Auth Params
   $servername = "localhost";
   $username = "root";
   $password = "";

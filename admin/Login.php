@@ -20,6 +20,7 @@
         <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
         <label for="password">Password</label>
       </div>
+      
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <?php
         if($_SESSION['msg'])
@@ -29,9 +30,11 @@
             <p style="text-align: center; color: red; margin-top: 10px;"><?php echo $msg; ?></p>
           <?php
         }
+        //to remove value from the session 
         unset($_SESSION['msg']);
       ?>
     </form>
+
 
   </body>
 </html>

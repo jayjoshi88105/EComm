@@ -10,13 +10,11 @@ $city = $_POST['city'];
 /////
 if (isset($_FILES['profilepic'])) {
     $errors = array();
-    
-
     $file_size = $_FILES['profilepic']['size'];
     $file_tmp = $_FILES['profilepic']['tmp_name'];
     $file_type = $_FILES['profilepic']['type'];
     $file_ext = strtolower(end(explode('.', $_FILES['profilepic']['name'])));
-    $file_name = strtotime(date("Y-m-d H:i:s")).".".$file_ext;
+    $file_name = strtotime(date("Y-m-d H:i:s")) . "." . $file_ext;
 
     $extensions = array("jpeg", "jpg", "png");
 

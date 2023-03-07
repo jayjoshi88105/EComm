@@ -4,8 +4,6 @@
 	$product_id = $_GET['id'];
 
 	try {
-	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	  
 	  $sql = "DELETE FROM products WHERE id=".$product_id;
 	  
 	  $result = $conn->exec($sql);
