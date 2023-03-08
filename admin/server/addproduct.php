@@ -13,22 +13,39 @@ if (isset($_FILES['product_thumb'])) {
 	$file_size = $_FILES['product_thumb']['size'];
 	$file_tmp = $_FILES['product_thumb']['tmp_name'];
 	$file_type = $_FILES['product_thumb']['type'];
+
+	//echo $_FILES['product_thumb']['name'];
+	//echo "<br>";
 	$file_ext = strtolower(end(explode('.', $_FILES['product_thumb']['name'])));
+	//die;
+
+	// echo date("Y-m-d H:i:s");
+	// echo "<br>";
+	// echo strtotime(date("Y-m-d H:i:s"));
+	// die;
+
 	$file_name = strtotime(date("Y-m-d H:i:s")) . "." . $file_ext;
 
+	// Ext validation
 	$extensions = array("jpeg", "jpg", "png");
-
 	if (in_array($file_ext, $extensions) === false) {
 		$errors[] = "extension not allowed, please choose a JPEG or PNG file.";
 	}
 
+	//Size validation
 	if ($file_size > 2097152) {
 		$errors[] = 'File size must be excately 2 MB';
 	}
 
 	if (empty($errors) == true) {
-		chmod("../product_thumb/", 0755);
-		move_uploaded_file($file_tmp, "../product_thumb/" . $file_name);
+		chmod("../product_thumb/", 0755); //To give permission
+		
+		move_uploaded_file(
+			$file_tmp, 
+			"../product_thumb/" . $file_name
+		); //To Uploading file
+		
+		
 		echo "Success";
 	} else {
 		print_r($errors);
@@ -38,7 +55,7 @@ if (isset($_FILES['product_thumb'])) {
 
 try {
 	$sql = "INSERT INTO products (product_name, description, category, price, stock, image) VALUES ('$product_name', '$description','$category', $price, $stock, '$file_name')";
-	
+
 	$result = $conn->exec($sql);
 
 	if ($result == 1) {

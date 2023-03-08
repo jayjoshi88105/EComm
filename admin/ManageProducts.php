@@ -103,9 +103,11 @@ $products = $stmt->fetchAll();
                   <td>
                     <?php echo $cntr; ?>
                   </td>
+
                   <td>
                     <img class="img_cls" src="<?php echo "product_thumb/" . $value['image']; ?>" />
                   </td>
+                  
                   <td>
                     <?php echo $value['product_name']; ?>
                   </td>
