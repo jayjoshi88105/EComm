@@ -12,7 +12,7 @@ $products = $stmt->fetchAll();
 <html lang="en">
 
 <head>
-  <title>Product Page</title>
+  <title>Customer Page</title>
   <?php require('header.php'); ?>
   <link href="css/dashboard.css" rel="stylesheet">
 
@@ -82,7 +82,7 @@ $products = $stmt->fetchAll();
                   <td>
                     <img class="img_cls" src="<?php echo "product_thumb/" . $value['image']; ?>" />
                   </td>
-                  
+
                   <td>
                     <?php echo $value['product_name']; ?>
                   </td>

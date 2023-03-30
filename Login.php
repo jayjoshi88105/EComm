@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Admin Login</title>
+    <title>Customer Login</title>
     <?php require('header.php'); ?>
     <link href="admin/css/admin.css" rel="stylesheet">
 </head>
