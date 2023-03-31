@@ -1,6 +1,7 @@
 <?php
   session_start();
-  print_r($_SESSION);
+  $name = $_SESSION['fullname'];
+  $profilepic = $_SESSION['profilepic'];
 ?>
 
 <!doctype html>
@@ -44,7 +45,24 @@
               <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
             </svg>
           </a>
-          <a class="btn btn-sm btn-outline-secondary" href="Login.php">Sign In</a>
+
+          <?php
+          if (isset($name)) {
+            ?>
+            <div>
+              <strong>
+                <?php echo $name; ?>
+              <strong>
+              <img src="admin/images/<?php echo $profilepic; ?>" style="width:33px;" />
+              <a href="admin/server/logout_user.php">Logout</a>
+            </div>
+            <?php
+          } else {
+            ?>
+              <a class="btn btn-sm btn-outline-secondary" href="Login.php">Sign In</a>
+            <?php
+          }
+          ?>
         </div>
       </div>
     </header>
