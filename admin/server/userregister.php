@@ -8,10 +8,6 @@ $password = $_POST['password'];
 $phone = $_POST['phone'];
 $city = $_POST['city'];
 
- echo "<pre>";
-//print_r($_FILES);
-//die;
-
 /////
 if (isset($_FILES['profilepic'])) {
     $errors = array();

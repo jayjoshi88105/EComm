@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form class="form-signin" action="server/userlogin.php" method="POST">
+    <form class="form-signin" action="admin/server/userlogin.php" method="POST">
         <div class="text-center mb-4">
             <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
         </div>
@@ -23,6 +23,9 @@
             <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
             <label for="password">Password</label>
         </div>
+
+        <input type="hidden" name="role" value="user"/>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p style="text-align:center; margin-top:5px;"><a href="Register.php">New User?</a></p>
         <?php
